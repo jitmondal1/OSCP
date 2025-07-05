@@ -14,7 +14,6 @@
 - [CVEs](#cves)
 - [Payloads](#payloads)
 - [Wordlists](#wordlists)
-- [Reporting](#reporting)
 - [Commands](#commands)
 	- [Basics](#basics-1)
 		- [curl](#curl)
