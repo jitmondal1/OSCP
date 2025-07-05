@@ -1,7 +1,5 @@
 # OSCP Cheat Sheet
 
-<br>
-
 ## Table of Contents
 
 - [Basics](#basics)
