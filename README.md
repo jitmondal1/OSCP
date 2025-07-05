@@ -15,7 +15,6 @@
 - [Payloads](#payloads)
 - [Wordlists](#wordlists)
 - [Reporting](#reporting)
-- [Social Media Resources](#social-media-resources)
 - [Commands](#commands)
 	- [Basics](#basics-1)
 		- [curl](#curl)
@@ -475,30 +474,6 @@
 | SecLists | https://github.com/danielmiessler/SecLists |
 | Username Anarchy | https://github.com/urbanadventurer/username-anarchy |
 
-### Reporting
-
-| Name | URL |
-| --- | --- |
-| OSCP-Note-Vault | https://github.com/0xsyr0/OSCP-Note-Vault |
-| SysReptor | https://github.com/Syslifters/sysreptor |
-| SysReptor OffSec Reporting | https://github.com/Syslifters/OffSec-Reporting |
-| SysReptor Portal | https://oscp.sysreptor.com/oscp/signup/ |
-
-### Social Media Resources
-
-| Name | URL |
-| --- | --- |
-| OSCP Guide 01/12 – My Exam Experience | https://www.youtube.com/watch?v=9mrf-WyzkpE&list=PLJnLaWkc9xRgOyupMhNiVFfgvxseWDH5x |
-| Rana Khalil | https://rana-khalil.gitbook.io/hack-the-box-oscp-preparation/ |
-| HackTricks | https://book.hacktricks.xyz/ |
-| HackTricks Local Windows Privilege Escalation Checklist | https://book.hacktricks.xyz/windows-hardening/checklist-windows-privilege-escalation |
-| Hacking Articles | https://www.hackingarticles.in/ |
-| Rednode Windows Privilege Escalation | https://rednode.com/privilege-escalation/windows-privilege-escalation-cheat-sheet/ |
-| OSCP Cheat Sheet by xsudoxx | https://github.com/xsudoxx/OSCP |
-| OSCP-Tricks-2023 by Rodolfo Marianocy | https://github.com/rodolfomarianocy/OSCP-Tricks-2023 |
-| IppSec (YouTube) | https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA |
-| IppSec.rocks | https://ippsec.rocks/?# |
-| 0xdf | https://0xdf.gitlab.io/ |
 
 ## Commands
 
