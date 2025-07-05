@@ -6978,7 +6978,7 @@ Compress-Archive -LiteralPath C:\PATH\TO\FOLDER\<FOLDER> -DestinationPath C:\PAT
 
 ```cmd
 Expand-Archive -Force <FILE>.zip
-7z x -pcodeblue sitebackup3.zip -ositebackup3	// To unzip using the password
+7z x -p<PASSWORD> <FILE>.zip -o<Output Directory>	// To unzip using the password
 ```
 
 ##### Start a new Process
