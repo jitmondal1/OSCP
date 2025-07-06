@@ -1496,9 +1496,10 @@ export ip=<RHOST>; for port in $(seq 1 65535); do timeout 0.01 bash -c "</dev/tc
 
 ```shell
 snmpwalk -c public -v1 <RHOST>
-snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.4.34.1.3
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.4.34.1.3 
 snmpwalk -v2c -c public <RHOST> .1
 snmpwalk -v2c -c public <RHOST> nsExtendObjects
+snmpwalk -v2c -c public <RHOST> NET-SNMP-EXTEND-MIB::nsExtendObject
 snmpwalk -c public -v1 <RHOST> 1.3.6.1.4.1.77.1.2.25
 snmpwalk -c public -v1 <RHOST> 1.3.6.1.2.1.25.4.2.1.2
 snmpwalk -c public -v1 <RHOST> .1.3.6.1.2.1.1.5
@@ -1506,6 +1507,11 @@ snmpwalk -c public -v1 <RHOST> 1.3.6.1.4.1.77.1.2.3.1.1
 snmpwalk -c public -v1 <RHOST> 1.3.6.1.4.1.77.1.2.27
 snmpwalk -c public -v1 <RHOST> 1.3.6.1.2.1.6.13.1.3
 snmpwalk -c public -v1 <RHOST> 1.3.6.1.2.1.25.6.3.1.2
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.1	// System info
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.2.2	// NICs
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.4.1	// Users
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.25.4.2.1.2	// Running processes
+snmpwalk -v2c -c public <RHOST> 1.3.6.1.2.1.6.13.1.3	// Open TCP ports
 ```
 
 ### Web Application Analysis
