@@ -7107,7 +7107,8 @@ pwncat-cs -lp <LPORT>
 #### rpcclient
 
 ```shell
-rpcclient -U "" <RHOST>
+rpcclient -U "" -N <RHOST>		\\ Anonymous Login
+rpcclient -U "<USERNAME>" <RHOST>	\\Login As the user
 ```
 
 ```shell
