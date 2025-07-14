@@ -1481,6 +1481,23 @@ sudo nmap $TARGET -p 88 --script krb5-enum-users --script-args krb5-enum-users.r
 ls -lh /usr/share/nmap/scripts/*ssh*
 locate -r '\.nse$' | xargs grep categories | grep categories | grep 'default\|version\|safe' | grep smb
 ```
+My first step is usually to scan the machine quickly with nmap for open TCP ports:
+```cmd
+nmap -p- -v <RHOST> -oN nmap_quick-scan.txt
+```
+Then I can use the following command to get all ports comma separated as output:
+```cmd
+cat quick-scan.txt | grep '/tcp' | cut -f1 -d '/' | tr '\n' ',' | sed 's/\(.*\),/\1 /'
+```
+Then we can use the open ports to do a more detailed version scan:
+```cmd
+nmap -p<ports> -sC -sV -oA nmap_resource.txt <RHOST>
+```
+After scanning the TCP ports, we should not forget to scan for UDP ports as well:
+```cmd
+sudo nmap -Pn -n <RHOST> -sUV --top-ports=100 --reason -oA nmap_resource-udp.txt
+```
+
 Nmap One liner
 ```cmd
 nmap -p- -Pn <RHOST> -v --min-rate 1000 --max-rtt-timeout 1000ms --max-retries 5 -ON nmap_ports.txt && sleep 5 &&  nmap -Pn <RHOST> -SV -SC -v -ON nmap_sV SC.txt && sleep 5 && nmap -T5 -Pn <RHOST> -v --script vuln -oN nmap_vuln.txt
