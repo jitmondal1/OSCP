@@ -1481,6 +1481,10 @@ sudo nmap $TARGET -p 88 --script krb5-enum-users --script-args krb5-enum-users.r
 ls -lh /usr/share/nmap/scripts/*ssh*
 locate -r '\.nse$' | xargs grep categories | grep categories | grep 'default\|version\|safe' | grep smb
 ```
+Nmap One liner
+```cmd
+nmap -p- -Pn $target -v --min-rate 1000 --max-rtt-timeout 1000ms --max-retries 5 -ON nmap_ports.txt && sleep 5 &&  nmap -Pn $target -SV -SC -v -ON nmap_sV SC.txt && sleep 5 && nmap -T5 -Pn $target -v --script vuln -oN nmap_vuln.txt
+```
 
 #### Port Scanning
 
@@ -3433,6 +3437,7 @@ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>'  --shares --smb-timeout 10
 netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares -M spider_plus
 netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares -M spider_plus -o READ_ONLY=false
 netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares -M spider_plus -o DOWNLOAD_FLAG=true
+netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares -M spider_plus -o DOWNLOAD_FLAG=true -o DOWNLOAD_DIR=.
 netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares -M spider_plus -o DOWNLOAD_FLAG=true MAX_FILE_SIZE=99999999
 netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --share <SHARE> --get-file <FILE> <FILE>
 ```
