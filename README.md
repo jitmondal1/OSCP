@@ -6383,6 +6383,14 @@ reg.exe save hklm\system c:\temp\system.save
 Get-ChildItem -Path C:\ -Include *.kdbx -File -Recurse -ErrorAction SilentlyContinue
 ```
 
+###### Open the KeePass Databases
+
+```cmd
+kpcli --kdb <FILENAME>.kdbx
+kpcli:/> find .		\\ Found all the places
+kpcli:/> show -f [num]	\\ Show the password for the position
+```
+
 ###### Internet Information Service (IIS)
 
 ```cmd
