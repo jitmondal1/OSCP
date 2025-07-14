@@ -45,6 +45,7 @@
 		- [snmpwalk](#snmpwalk)
 	- [Web Application Analysis](#web-application-analysis-1)
 		- [Burp Suite](#burp-suite)
+  		- [Nikto](#nikto)
   		- [cadaver](#cadaver)
 		- [Cross-Site Scripting (XSS)](#cross-site-scripting-xss)
 		- [ffuf](#ffuf)
@@ -1556,6 +1557,12 @@ Ctrl+Shift+u    // URL decoding
 ```shell
 export HTTP_PROXY=http://localhost:8080
 export HTTPS_PROXY=https://localhost:8080
+```
+
+#### Nikto
+
+```shell
+nikto -host=http://<RHOST> -output=80-nikto.txt
 ```
 
 #### cadaver
