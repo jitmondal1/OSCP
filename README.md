@@ -1508,7 +1508,7 @@ sudo nmap -Pn -n <RHOST> -sUV --top-ports=100 --reason -oA nmap_resource-udp.txt
 
 Nmap One liner
 ```cmd
-nmap -p- -Pn <RHOST> -v --min-rate 1000 --max-rtt-timeout 1000ms --max-retries 5 -ON nmap_ports.txt && sleep 5 &&  nmap -Pn <RHOST> -SV -SC -v -ON nmap_sV SC.txt && sleep 5 && nmap -T5 -Pn <RHOST> -v --script vuln -oN nmap_vuln.txt
+nmap -p- -Pn <RHOST> -v --min-rate 1000 --max-rtt-timeout 1000ms --max-retries 5 -oN nmap_ports.txt && sleep 5 &&  nmap -Pn <RHOST> -sV -sC -v -oN nmap_sV_sC.txt && sleep 5 && nmap -T5 -Pn <RHOST> -v --script vuln -oN nmap_vuln.txt
 ```
 
 #### Port Scanning
